@@ -19,7 +19,7 @@ export class App extends React.Component {
     this.setState(({ contacts }) =>
       contacts.find(contact => contact.name === data.name)
         ? alert(`${data.name} is already in contacts`)
-        : { contact: [data, ...contacts] }
+        : { contacts: [data, ...contacts] }
     );
   };
 

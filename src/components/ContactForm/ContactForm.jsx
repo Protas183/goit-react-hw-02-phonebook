@@ -19,10 +19,13 @@ const initialValues = {
 };
 
 export const ContactForm = ({ onSubmit }) => {
+  const formatName = (name) => {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  };
   const handleSubmit = (values, { resetForm }) => {
     const newContact = {
       id: 'id-' + nanoid(),
-      name: values.name,
+      name: formatName(values.name),
       number: values.number,
     };
 
